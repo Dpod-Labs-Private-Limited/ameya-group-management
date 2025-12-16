@@ -294,7 +294,6 @@ export default function GroupManagement(props) {
                                             value={selectedUserToAdd}
                                             onChange={e => setSelectedUserToAdd(e.target.value)}
                                             disabled={usersLoading || availableUsers.length === 0}
-                                            label="Add Member"
                                             sx={mainStyle.selectField}
                                         >
                                             {availableUsers.map(u => (
