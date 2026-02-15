@@ -25,11 +25,11 @@ class dpodappFlyteApi {
     getAll = async (appflyte_details, last_evaluated_key) => {
         await this.initialize(appflyte_details);
         const organization_id = appflyte_details?.appflyte_organization_id ?? null;
-        const queryObj = [{
-            field_name: "payload.organizations",
-            field_value: organization_id,
-            operator: "like"
-        }]
+        const app_id = appflyte_details?.appflyte_app_id ?? null;
+        const queryObj = [
+            { field_name: "payload.organizations", field_value: organization_id, operator: "like" },
+            { field_name: "payload.app_id", field_value: app_id, operator: "eq" }
+        ]
         const queyString = encodeURIComponent(JSON.stringify(queryObj))
         return AxiosObj.get(`/${this.accountId}/admin/api/collection/${this.accountId}/user/private/cm/v1/${this.schema_id}/groups?filters=${queyString}&last_evaluated_key=${last_evaluated_key}&page_size=500&include_detail=false`)
     }

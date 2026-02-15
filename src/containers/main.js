@@ -27,6 +27,7 @@ export default function GroupManagement(props) {
         appflyte_backend_url: props?.appflyte_backend_url ?? null,
         appflyte_schema_id: props?.appflyte_schema_id ?? null,
         appflyte_dpod_token: props?.appflyte_dpod_token ?? null,
+        appflyte_app_id: props?.appflyte_app_id ?? null,
         appflyte_organization_id: props?.appflyte_organization_id ?? null,
         appflyte_app_name: "BugTracker" ?? null
     }), [props]);
