@@ -176,7 +176,9 @@ export default function GroupManagement(props) {
                     "has_been_muted": false,
                     "is_active": true,
                     "user": [userId],
-                    "group": [selectedGroup?.payload?.__auto_id__]
+                    "group": [selectedGroup?.payload?.__auto_id__],
+                    "app_id": appflyteDetails.appflyte_app_id,
+                    "organization_id": appflyteDetails?.appflyte_organization_id || []
                 }
             };
 
